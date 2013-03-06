@@ -1,0 +1,39 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+ /**
+  * Implements hook_menu().
+  */
+function gsb_feature_existing_node_fpp_menu() {
+  $items['gsb_feature_existing_node_fpp_autocomplete/%/%'] = array(
+    'title' => 'GSB Feature Existing Node FPP Autocomplete',
+    'page callback' => 'gsb_feature_existing_node_fpp_autocomplete',
+    'page arguments' => array(1, 2),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+ }
+
+/**
+ * Implements hook_entity_alter().
+ */
+function gsb_feature_existing_node_fpp_entity_info_alter(&$entity_info) {
+  $entity_info['fieldable_panels_pane']['bundles']['gsb_existing_node_fpp'] = array(
+    'label' => t('Add GSB existing node'),
+    'pane category' => t('GSB Category'),
+    'pane top level' => TRUE, // set to true to make this show as a top level icon
+    'pane icon' => drupal_get_path('module', 'panopoly_widgets') . '/images/icon_existing_node_fpp.png',
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      // Note that this has all _ replaced with - from the bundle name.
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/gsb-existing-node-fpp',
+      'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+}
