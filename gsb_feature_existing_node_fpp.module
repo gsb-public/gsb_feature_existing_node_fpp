@@ -4,21 +4,6 @@
  * Drupal needs this blank file.
  */
 
- /**
-  * Implements hook_menu().
-  */
-function gsb_feature_existing_node_fpp_menu() {
-  $items['gsb_feature_existing_node_fpp_autocomplete/%/%'] = array(
-    'title' => 'GSB Feature Existing Node FPP Autocomplete',
-    'page callback' => 'gsb_feature_existing_node_fpp_autocomplete',
-    'page arguments' => array(1, 2),
-    'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
-  );
-
-  return $items;
- }
-
 /**
  * Implements hook_entity_alter().
  */
@@ -36,63 +21,4 @@ function gsb_feature_existing_node_fpp_entity_info_alter(&$entity_info) {
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
-}
-
-
-/**
- * Implements hook_form_alter().
- */
-function gsb_feature_existing_node_fpp_form_alter(&$form, &$form_state, $form_id) {
-
-  // Only manipulate the feildable panel pane form and the gsb_existing_node one at that.
-  if (($form_id == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form' || 
-       $form_id == 'fieldable_panels_panes_entity_edit_form') && $form['#bundle'] == 'gsb_existing_node_fpp') {
-
-    $form['#attached']['js'][] = drupal_get_path('module', 'gsb_feature_existing_node_fpp') . '/js/autofill.js';
-
-    $form['field_entity_reference']['und'][0]['value']['#autocomplete_path'] = 'gsb_feature_existing_node_fpp_autocomplete/' . 'test1' . '/test2';
-  
-  }  
-
-}
-
-/**
- * Autocomplete form for existing node.
- */
-function gsb_feature_existing_node_fpp_autocomplete($arg1, $arg2, $search_term = '') {
-
-  $matches = array();
-
-  $query = new EntityFieldQuery();
-
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', array('gsb_person', 'business_insight'))
-    ->propertyCondition('status', 1)
-    ->propertyCondition('title', '%' . $search_term . '%', 'like');
-
-  $query->range(0, 5);
-
-  $result = $query->execute();
-  $items = array();
-  if (isset($result['node'])) {
-    $nids = array_keys($result['node']);
-    $items = entity_load('node', $nids);
-  }
-
-  foreach($items as $nid => $entity) {
-    $data = array(
-      'nid' => $nid,
-      'title' => (empty($entity->title)) ? '' : $entity->title,
-    );
-
-    $key = $data['title'];
-
-    if (!empty($key)) {
-      $matches[$key] = '<div class="item-wrapper" data-info="' . implode('|', $data) . '">' . $data['title'] . '</div>';
-    }    
-
-  }
-  
-  drupal_json_output($matches);
-
 }
