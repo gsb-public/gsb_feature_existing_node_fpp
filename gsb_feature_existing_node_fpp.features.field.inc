@@ -18,14 +18,7 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_entity_reference',
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
+      'foreign keys' => array(),
       'indexes' => array(
         'target_id' => array(
           0 => 'target_id',
@@ -62,13 +55,14 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'entityreference',
           'settings' => array(
-            'link' => FALSE,
+            'links' => 0,
+            'view_mode' => 'teaser',
           ),
-          'type' => 'entityreference_label',
-          'weight' => 0,
+          'type' => 'entityreference_entity_view',
+          'weight' => '0',
         ),
         'ical' => array(
           'label' => 'above',
