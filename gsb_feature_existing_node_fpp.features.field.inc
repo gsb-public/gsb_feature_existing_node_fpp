@@ -41,6 +41,8 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
             'business_insight' => 'business_insight',
             'gsb_event' => 'gsb_event',
             'gsb_media_mention' => 'gsb_media_mention',
+            'gsb_school_story' => 'gsb_school_story',
+            'gsb_video' => 'gsb_video',
           ),
         ),
         'target_type' => 'node',
