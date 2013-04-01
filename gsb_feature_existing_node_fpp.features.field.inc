@@ -10,8 +10,8 @@
 function gsb_feature_existing_node_fpp_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'fieldable_panels_pane-gsb_existing_node_fpp-field_entity_reference'.
-  $fields['fieldable_panels_pane-gsb_existing_node_fpp-field_entity_reference'] = array(
+  // Exported field: 'fieldable_panels_pane-existing_node-field_entity_reference'.
+  $fields['fieldable_panels_pane-existing_node-field_entity_reference'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -51,7 +51,7 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_existing_node_fpp',
+      'bundle' => 'existing_node',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
