@@ -76,7 +76,7 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_entity_reference',
       'label' => 'Entity Reference',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'behaviors' => array(
           'taxonomy-index' => array(
