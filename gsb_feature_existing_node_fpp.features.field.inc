@@ -10,15 +10,22 @@
 function gsb_feature_existing_node_fpp_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'fieldable_panels_pane-existing_node-field_entity_reference'.
-  $fields['fieldable_panels_pane-existing_node-field_entity_reference'] = array(
+  // Exported field: 'fieldable_panels_pane-existing_node-field_existing_node_fpp_ref'.
+  $fields['fieldable_panels_pane-existing_node-field_existing_node_fpp_ref'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_entity_reference',
-      'foreign keys' => array(),
+      'field_name' => 'field_existing_node_fpp_ref',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
       'indexes' => array(
         'target_id' => array(
           0 => 'target_id',
@@ -27,22 +34,17 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
       'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
-        'handler' => 'base',
+        'handler' => 'views',
         'handler_settings' => array(
           'behaviors' => array(
             'views-select-list' => array(
               'status' => 0,
             ),
           ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'business_insight' => 'business_insight',
-            'gsb_event' => 'gsb_event',
-            'gsb_media_mention' => 'gsb_media_mention',
-            'gsb_school_story' => 'gsb_school_story',
-            'gsb_video' => 'gsb_video',
+          'view' => array(
+            'args' => array(),
+            'display_name' => 'entityreference_1',
+            'view_name' => 'existing_node_fpp_reference',
           ),
         ),
         'target_type' => 'node',
@@ -57,14 +59,14 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
-            'links' => 0,
-            'view_mode' => 'teaser',
+            'conditions' => array(),
+            'link' => FALSE,
           ),
-          'type' => 'entityreference_entity_view',
-          'weight' => '0',
+          'type' => 'entityreference_label',
+          'weight' => 1,
         ),
         'ical' => array(
           'label' => 'above',
@@ -74,8 +76,8 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
-      'field_name' => 'field_entity_reference',
-      'label' => 'Entity Reference',
+      'field_name' => 'field_existing_node_fpp_ref',
+      'label' => 'Existing Node Title',
       'required' => 1,
       'settings' => array(
         'behaviors' => array(
@@ -90,11 +92,12 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
         'module' => 'entityreference',
         'settings' => array(
           'match_operator' => 'CONTAINS',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'path' => '',
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '-4',
+        'weight' => '-3',
       ),
       'workbench_access_field' => 0,
     ),
@@ -102,7 +105,7 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Entity Reference');
+  t('Existing Node Title');
 
   return $fields;
 }

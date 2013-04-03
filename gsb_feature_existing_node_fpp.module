@@ -1,8 +1,10 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the GSB Feature Existing Node FPP feature.
  */
+
+include_once 'gsb_feature_existing_node_fpp.features.inc';
 
 /**
  * Implements hook_entity_alter().
