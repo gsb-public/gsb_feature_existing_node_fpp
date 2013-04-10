@@ -68,6 +68,17 @@ function gsb_feature_existing_node_fpp_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'megamenu' => array(
+          'label' => 'hidden',
+          'module' => 'entityreference',
+          'settings' => array(
+            'conditions' => array(),
+            'links' => 0,
+            'view_mode' => 'megamenu',
+          ),
+          'type' => 'entityreference_entity_view',
+          'weight' => '1',
+        ),
       ),
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_existing_node_fpp_ref',

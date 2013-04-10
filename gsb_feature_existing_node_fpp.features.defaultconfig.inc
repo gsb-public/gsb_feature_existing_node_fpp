@@ -40,7 +40,7 @@ function gsb_feature_existing_node_fpp_defaultconfig_strongarm() {
         'custom_settings' => FALSE,
       ),
       'megamenu' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -52,6 +52,10 @@ function gsb_feature_existing_node_fpp_defaultconfig_strongarm() {
       'display' => array(
         'title' => array(
           'default' => array(
+            'weight' => '-5',
+            'visible' => FALSE,
+          ),
+          'megamenu' => array(
             'weight' => '-5',
             'visible' => FALSE,
           ),
