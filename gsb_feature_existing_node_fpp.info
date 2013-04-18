@@ -5,7 +5,6 @@ package = GSB
 php = 5.2.4
 version = 7.x-1.0
 project = gsb_feature_existing_node_fpp
-dependencies[] = defaultconfig
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = gsb_feature_base_fields
