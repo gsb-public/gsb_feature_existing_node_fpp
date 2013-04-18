@@ -1,24 +1,13 @@
 <?php
 /**
  * @file
- * gsb_feature_existing_node_fpp.features.defaultconfig.inc
+ * gsb_feature_existing_node_fpp.strongarm.inc
  */
 
 /**
- * Implements hook_defaultconfig_features().
+ * Implements hook_strongarm().
  */
-function gsb_feature_existing_node_fpp_defaultconfig_features() {
-  return array(
-    'gsb_feature_existing_node_fpp' => array(
-      'strongarm' => 'strongarm',
-    ),
-  );
-}
-
-/**
- * Implements hook_defaultconfig_strongarm().
- */
-function gsb_feature_existing_node_fpp_defaultconfig_strongarm() {
+function gsb_feature_existing_node_fpp_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
