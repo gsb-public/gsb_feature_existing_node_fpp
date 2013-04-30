@@ -58,8 +58,13 @@ function gsb_feature_existing_node_fpp_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'business_insight' => 'business_insight',
+    'case_study' => 'case_study',
     'event' => 'event',
     'media_mention' => 'media_mention',
+    'news' => 'news',
+    'page' => 'page',
+    'publication' => 'publication',
+    'research_paper' => 'research_paper',
     'gsb_video' => 'gsb_video',
   );
 
