@@ -66,6 +66,7 @@ function gsb_feature_existing_node_fpp_views_default_views() {
     'publication' => 'publication',
     'research_paper' => 'research_paper',
     'gsb_video' => 'gsb_video',
+    'webform' => 'webform',
   );
 
   /* Display: Entity Reference */
