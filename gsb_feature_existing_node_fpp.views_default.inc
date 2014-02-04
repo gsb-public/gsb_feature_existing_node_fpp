@@ -61,6 +61,7 @@ function gsb_feature_existing_node_fpp_views_default_views() {
     'case' => 'case',
     'event' => 'event',
     'page' => 'page',
+    'publication' => 'publication',
     'webform' => 'webform',
     'working_paper' => 'working_paper',
   );
