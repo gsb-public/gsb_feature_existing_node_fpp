@@ -57,11 +57,16 @@ function gsb_feature_existing_node_fpp_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'announcement' => 'announcement',
     'book' => 'book',
     'case' => 'case',
     'event' => 'event',
-    'page' => 'page',
+    'idea_story' => 'idea_story',
     'publication' => 'publication',
+    'offsite_idea_story' => 'offsite_idea_story',
+    'offsite_school_story' => 'offsite_school_story',
+    'page' => 'page',
+    'school_story' => 'school_story',
     'webform' => 'webform',
     'working_paper' => 'working_paper',
   );
