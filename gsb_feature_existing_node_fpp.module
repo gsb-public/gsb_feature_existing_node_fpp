@@ -10,8 +10,9 @@ include_once 'gsb_feature_existing_node_fpp.features.inc';
  * Implements hook_entity_alter().
  */
 function gsb_feature_existing_node_fpp_entity_info_alter(&$entity_info) {
+
   $entity_info['fieldable_panels_pane']['bundles']['existing_node'] = array(
-    'label' => t('Existing node'),
+    'label' => t('Existing Node: Node ID'),
     'pane category' => t('GSB panes'),
     'pane top level' => TRUE, // set to true to make this show as a top level icon
     'admin' => array(
