@@ -67,7 +67,6 @@ function gsb_feature_existing_node_fpp_views_default_views() {
     'offsite_school_story' => 'offsite_school_story',
     'page' => 'page',
     'school_story' => 'school_story',
-    'webform' => 'webform',
     'working_paper' => 'working_paper',
   );
 
