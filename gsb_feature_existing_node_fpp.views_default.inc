@@ -130,6 +130,7 @@ function gsb_feature_existing_node_fpp_views_default_views() {
     'announcement' => 'announcement',
     'book' => 'book',
     'case' => 'case',
+    'event' => 'event',
     'idea_story' => 'idea_story',
     'publication' => 'publication',
     'offsite_idea_story' => 'offsite_idea_story',
