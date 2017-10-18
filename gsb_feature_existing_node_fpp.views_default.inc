@@ -91,6 +91,31 @@ function gsb_feature_existing_node_fpp_views_default_views() {
     'type' => 'type',
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'announcement' => 'announcement',
+    'book' => 'book',
+    'case' => 'case',
+    'event' => 'event',
+    'idea_story' => 'idea_story',
+    'publication' => 'publication',
+    'offsite_school_story' => 'offsite_school_story',
+    'page' => 'page',
+    'school_story' => 'school_story',
+    'working_paper' => 'working_paper',
+  );
 
   /* Display: Entity Node List Reference */
   $handler = $view->new_display('entityreference', 'Entity Node List Reference', 'entityreference_2');
@@ -133,7 +158,6 @@ function gsb_feature_existing_node_fpp_views_default_views() {
     'event' => 'event',
     'idea_story' => 'idea_story',
     'publication' => 'publication',
-    'offsite_idea_story' => 'offsite_idea_story',
     'offsite_school_story' => 'offsite_school_story',
     'school_story' => 'school_story',
     'working_paper' => 'working_paper',
