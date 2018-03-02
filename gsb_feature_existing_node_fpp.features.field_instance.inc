@@ -11,7 +11,7 @@ function gsb_feature_existing_node_fpp_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'fieldable_panels_pane-existing_node-field_existing_node_fpp_ref'
+  // 'fieldable_panels_pane-existing_node-field_existing_node_fpp_ref'.
   $field_instances['fieldable_panels_pane-existing_node-field_existing_node_fpp_ref'] = array(
     'bundle' => 'existing_node',
     'default_value' => NULL,
@@ -24,6 +24,7 @@ function gsb_feature_existing_node_fpp_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -41,6 +42,7 @@ function gsb_feature_existing_node_fpp_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'megamenu',
         ),
         'type' => 'entityreference_entity_view',
